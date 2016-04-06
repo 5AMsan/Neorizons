@@ -1,36 +1,201 @@
 /*
-Theme Name:         FoundationPress
-Theme URI:          http://foundationpress.olefredrik.com
-Github Theme URI:   https://github.com/olefredrik/FoundationPress
-Description:        FoundationPress is a WordPress starter theme based on Foundation 6 by Zurb
-Version:            2.5.1
-Author:             Ole Fredrik Lie
-Author URI:         http://olefredrik.com/
 
-License:            MIT License
-License URI:        http://www.opensource.org/licenses/mit-license.php
+Theme Name:         Neorizons_old
+
+Theme URI:          http://www.neorizons.fr
+
+Description:        Neorizons theme based on Foundation 6
+
+Version:            0.1
+
+Author:             SAMsan
+
+
+
+License:            WTFPL
+
+License URI:        http://www.wtfpl.net/
+
 */
+
+
 
 /* ----------------------------------------------------------------------------
 
+
+
   Unfortunately WordPress will require a style.css file
+
   located in the theme's root folder for stuff to work.
+
+
 
   However, we will not be using vanilla CSS. We're using Sass.
 
+
+
   Sass is a superset of CSS that adds in amazing features
+
   such as variables, nested selectors and loops. It's also
+
   the easiest way to customize Foundation.
 
+
+
   All Sass files are located in the /assets/scss folder.
+
   Please note that none of your scss files will be compiled to /stylesheets/foundation.css before you run
+
   'npm run watch' or 'npm run build'.
 
+
+
   Please read the README.md file before getting started. More info on how
+
   to use Sass with Foundation can be found here:
+
   http://foundation.zurb.com/docs/sass.html
 
+
+
   If you for some reason would like to write plain css instead of using Sass,
+
   you could just enqueue this file (style.css) to the header and add your styles in this file
 
+
+
 ---------------------------------------------------------------------------- */
+
+body.home section.stripe .home-cptarchive.home-reference {
+
+padding: 1.5625rem 2rem;
+
+height: 350px;
+
+}
+
+body.home section.stripe .home-cptarchive.home-reference img {
+
+max-height: 300px;
+
+width: auto;
+
+}
+
+body.single-reference .clearfix h2 {
+
+clear: both;
+
+line-height: 1.2;
+
+padding-top: 2rem;
+
+}
+
+body .home-reference p {
+
+    margin-left: 1.4rem;
+
+}
+
+body #quelques-chiffres .subpage-content ul {
+
+	list-style: none;
+
+}
+
+body #quelques-chiffres .subpage-content ul li {
+
+	display: block;
+
+	width: 25%;
+
+	padding: .25rem;
+
+	float: left;
+
+}
+
+body #quelques-chiffres .subpage-content ul li strong {
+
+    display: block;
+
+	font-size: 400%;
+
+    font-family: Economica;
+
+}
+
+body .long-excerpt {
+
+    width: 400px;
+
+    height: 280px;
+
+    vertical-align: middle;
+
+    padding: 2rem 0;
+
+    overflow: hidden;
+
+    font-size: 300%;
+
+    opacity: .2;
+
+}
+
+body .long-excerpt p {
+
+    line-height: 1;
+
+}
+
+.left { float: left}
+
+.right { float: right}
+
+nav.cpt-nav {margin-top:2rem;}
+
+
+
+button.orbit-previous:before {
+
+    content: "\f053";	
+
+}
+
+button.orbit-next:before {
+
+    content: "\f054";	
+
+}
+
+button[class|="orbit"]:before {
+
+    font-family: FontAwesome;
+
+    visibility: visible;
+
+}
+
+button[class|="orbit"]:hover {
+
+    color:#0000ff;
+
+}
+
+button[class|="orbit"]{
+
+    visibility: hidden;
+
+}
+@media screen and (max-width:88em) {
+	.top-bar-left {
+		float:none;
+	}
+	li.home {
+		text-align: center;
+		width: 100%;
+		display: block;
+	}
+}

@@ -1,0 +1,113 @@
+#masthead, #site-navigation, .title-bar {
+	@extend .row;
+	@extend .expanded;
+	max-width:100%;
+	z-index: 10;
+}
+body.admin-bar nav#site-navigation {
+    /*margin-top: 32px;*/
+}
+.top-bar { 
+  .menu .home a {
+    font-size: 1rem;
+    color: #B9B9B9;
+	/*line-height: 80px;*/
+  }
+  .top-bar-left .menu .home {
+	padding: 0;
+	a {
+		padding: 1rem 0.5rem;
+	}
+  }
+  .menu a {
+	  color: $white;
+  }
+
+  .dropdown.menu a {
+    height: 104px;
+    line-height: 1.3;
+    color: $light-gray;
+    padding-top: rem-calc(32);
+    padding-bottom: 0;
+    font-weight: bold;
+    font-size: 0.8rem;
+	postion: relative;
+	
+    &:hover:not(.button) {
+      color: $secondary-color;
+    }
+	
+	@include breakpoint(medium only) {
+		font-size: 1rem !important;
+	}
+  }
+  
+  .menu.submenu a {
+	height: auto;
+	line-height: 2;
+  }
+  
+  .menu>li:not(.menu-text)>a {
+	  font-size: 1.375rem;
+  }
+
+  .menu li {
+	  
+	  padding-right:$menu-margin-outer;
+  }
+  .dropdown.menu li:not(:last-child) {
+	position: relative;
+	padding-right:0;
+    &:after {
+		content: '•';
+		color: $primary-color;
+		position: absolute;
+		top: 39px;
+		right: -4px;
+
+	}
+		
+	@include breakpoint(medium) {}
+  }
+  .menu.submenu li:after {
+	  display:none;
+  }
+  
+  .menu li.home {
+	  padding-left: $menu-margin-outer;
+	  padding-right: $menu-margin-outer;
+  }
+
+  .dropdown.menu .submenu {
+    background-color: #121212;
+    color: #e6e6e6;
+    border: 0;
+  }
+
+  .dropdown.menu .has-submenu.is-down-arrow a {
+    padding-right: 1rem;
+  }
+
+  .dropdown.menu .has-submenu.is-down-arrow>a::after {
+    border: 0;
+  }
+
+
+}
+
+.vertical &.menu {
+  padding: 1rem;
+}
+
+.title-bar {
+  @include breakpoint(medium) {
+    display: none;
+  }
+
+  .title a {
+    font-size: 1rem;
+    color: #B9B9B9;
+  }
+}
+
+

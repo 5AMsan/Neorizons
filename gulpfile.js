@@ -166,7 +166,7 @@ gulp.task('copy', function() {
   var motionUi = gulp.src('assets/components/motion-ui/**/*.*')
     .pipe($.flatten())
     .pipe(gulp.dest('assets/javascript/vendor/motion-ui'));
-
+  
   // What Input
   var whatInput = gulp.src('assets/components/what-input/**/*.*')
       .pipe($.flatten())

@@ -2,11 +2,17 @@
 #front-hero {
 	.marketing {
 		@include grid-row();
-		max-width: 55rem;
+		//max-width: 55rem;
+		width: 100%;
+		text-align: center;
+		
+		h1 {
+			margin: 50px 0;
+		}
 	}
 
 	@include breakpoint(small) {
-		background: url('../images/demo/hero-bg-foundation-6-small.svg') bottom center;
+		background: url('../images/hero-bg6.svg') bottom center;
 		background-size: cover;
 		background-position: bottom;
 		padding: rem-calc(65%) 0;
@@ -17,7 +23,7 @@
 	}
 
 	@include breakpoint(medium) {
-		background: url('../images/demo/hero-bg-foundation-6-large.svg') bottom center;
+		background: url('../images/hero-bg.svg') bottom center;
 		background-size: cover;
 		background-position: center;
 		height: rem-calc(685);
@@ -91,7 +97,7 @@
 	}
 
 	h1 {
-		color: #fff;
+		color: $light-gray;
 		font-weight: 500;
 
 		@include breakpoint(small) {

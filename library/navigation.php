@@ -10,25 +10,43 @@
 register_nav_menus(array(
 	'top-bar-r'  => 'Right Top Bar',
 	'mobile-nav' => 'Mobile',
+	'footer-nav' => 'Footer menu',
 ));
 
 
 /**
+ * Footer navigation
+ * http://codex.wordpress.org/Function_Reference/wp_nav_menu
+ */
+if ( ! function_exists( 'foundationpress_footer_nav' ) ) {
+	function foundationpress_footer_nav() {
+	    wp_nav_menu(array(
+			'container' => false,                           // Remove nav container
+			'menu_class' => 'menu',           			// Adding custom nav class
+			'items_wrap'     => '<ul id="%1$s" class="%2$s show-for-large" >%3$s</ul>',
+			'theme_location' => 'footer-nav',                // Where it's located in the theme
+			'depth' => 1,                                   // Limit the depth of the nav
+			//'fallback_cb' => 'neorizons_get_default_menu',  // Fallback function (see below)
+			//'walker' => new Foundationpress_Top_Bar_Walker(),
+	    ));
+	}
+}
+
+/**
  * Desktop navigation - right top bar
- *
- * @link http://codex.wordpress.org/Function_Reference/wp_nav_menu
+ * http://codex.wordpress.org/Function_Reference/wp_nav_menu
  */
 if ( ! function_exists( 'foundationpress_top_bar_r' ) ) {
 	function foundationpress_top_bar_r() {
-		wp_nav_menu( array(
-			'container'      => false,
-			'menu_class'     => 'dropdown menu',
-			'items_wrap'     => '<ul id="%1$s" class="%2$s desktop-menu" data-dropdown-menu>%3$s</ul>',
-			'theme_location' => 'top-bar-r',
-			'depth'          => 3,
-			'fallback_cb'    => false,
-			'walker'         => new Foundationpress_Top_Bar_Walker(),
-		));
+	    wp_nav_menu(array(
+			'container' => false,                           // Remove nav container
+			'menu_class' => 'menu',           			// Adding custom nav class
+			'items_wrap'     => '<ul id="%1$s" class="%2$s show-for-large" >%3$s</ul>',
+			'theme_location' => 'top-bar-r',                // Where it's located in the theme
+			'depth' => 3,                                   // Limit the depth of the nav
+			'fallback_cb' => 'neorizons_get_default_menu',  // Fallback function (see below)
+			'walker' => new Foundationpress_Top_Bar_Walker(),
+	    ));
 	}
 }
 
@@ -38,15 +56,15 @@ if ( ! function_exists( 'foundationpress_top_bar_r' ) ) {
  */
 if ( ! function_exists( 'foundationpress_mobile_nav' ) ) {
 	function foundationpress_mobile_nav() {
-		wp_nav_menu( array(
-			'container'      => false,                         // Remove nav container
-			'menu'           => __( 'mobile-nav', 'foundationpress' ),
-			'menu_class'     => 'vertical menu',
-			'theme_location' => 'mobile-nav',
-			'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu>%3$s</ul>',
-			'fallback_cb'    => false,
-			'walker'         => new Foundationpress_Mobile_Walker(),
-		));
+	    wp_nav_menu(array(
+        'container' => false,                           // Remove nav container
+				'menu'           => __( 'mobile-nav', 'foundationpress' ),
+				'menu_class'     => 'vertical menu',
+				'theme_location' => 'mobile-nav',
+				'items_wrap'     => '<ul id="%1$s" class="%2$s show-for-medium-down" data-accordion-menu>%3$s</ul>',
+				'fallback_cb'    => 'neorizons_get_mobile_menu',
+        		'walker' => new Foundationpress_Mobile_Walker(),
+	    ));
 	}
 }
 
@@ -227,3 +245,4 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 		echo '</ul>';
 	}
 }
+?>

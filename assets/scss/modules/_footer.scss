@@ -14,5 +14,35 @@
 			margin: 0;
 			padding: 0;
 		}
+		a {
+			color: $white;
+		}
+
+		nav {
+			@extend .columns;
+			@extend .small-9;
+			li {
+				@extend .text-right;
+				float: right;
+				
+				&:nth-child(n+4) {
+					display: none;
+				}
+				a {
+					padding-right: 0;
+				}
+			}
+		}
+		.footer-logo {
+			@extend .columns;
+			@extend .small-3;
+		}
+		.widget {
+			@extend .small-8;
+			@extend .columns;
+			@extend .text-right;
+		}
+		
 	}
+	
 }

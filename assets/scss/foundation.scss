@@ -7,11 +7,11 @@
   Licensed under MIT Open Source
 */
 
-//  Settings
-@import "global/settings"; // Foundation settings file.
-
 // Foundation mixins & browser resets
 @import '../components/foundation-sites/scss/foundation';
+
+//  Settings
+@import "global/settings"; // Foundation settings file.
 
 // WP overrides
 @import "global/wp-admin"; // Fix issues with wp-admin bar positioning
@@ -75,10 +75,18 @@
   Add your scss files below to structure your project styles
 */
 
+// Fonts
+@import "global/fonts";
+
+// Main
+@import "global/main";
+@import "global/off-canvas";
+
 // Modules
-@import "modules/navigation";
+/*@import "modules/navigation";*/
 @import "modules/footer";
 @import "modules/sidebar";
+@import "modules/topbar";
 
 // Components
 @import "components/buttons";

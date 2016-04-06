@@ -9,3 +9,16 @@ body.admin-bar.f-topbar-fixed {
 		margin-top: rem-calc(32);
 	}
 }
+
+.home.page section.stripe {
+  @include grid-row();
+  margin-top: 3rem;
+
+  .main-content {
+    @include breakpoint(small) {
+      @include grid-column(12);
+    }
+
+  }
+
+}
